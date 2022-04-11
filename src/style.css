@@ -105,13 +105,14 @@ body{
     font-weight: bold;
 }
 
+/* CheckBox done */
 .taskList input{
    display: block;
    float: right;
    margin-top: -5px;
    margin-left: 5px;
    border-radius: 50px;
-   background: red;
+   color: red;
 }
 
 .taskTitle{
@@ -128,6 +129,7 @@ body{
     left: 210px;
     margin-top: -10px;
     float: right;
-    color: green;
+    color: rgb(2, 168, 2);
     font-size: 26px;
+    font-weight: bold;
 }

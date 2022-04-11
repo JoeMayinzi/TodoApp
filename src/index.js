@@ -33,11 +33,23 @@ const displayTodo = ()=> {
         taskList.setAttribute("class", "taskList")
         createTask.value = "";
 
-        done.addEventListener("click", (e)=>{
+        done.addEventListener("click", ()=>{
             icon.setAttribute("class", "fas fa-check");
             
         })
+
+        const deleTodo = ()=>{
+            deleteTask.addEventListener("click", (e)=>{
+                taskList.remove()
+            })
+        }
+        deleTodo()
     })
+    
+    
 }
+
+
+
 
 displayTodo()
