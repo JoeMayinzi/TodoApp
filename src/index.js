@@ -5,16 +5,14 @@ const addTask = document.querySelector("#addTask");
 const tasks = document.querySelector(".tasks");
 const emptyTodo = document.querySelector(".emptyTodo")
 
-const displayTodo = ()=> {
+const todoApp = ()=> {
     addTask.addEventListener("click", (Event)=>{
         Event.preventDefault()
         if (createTask.value === "") {
             console.log("champ vide");
         }
         if (createTask.value != "") {
-            console.log(createTask.value);
             emptyTodo.remove()
-            //createTask.value = "";
         }
 
         const taskList = document.createElement("div");
@@ -35,21 +33,52 @@ const displayTodo = ()=> {
 
         done.addEventListener("click", ()=>{
             icon.setAttribute("class", "fas fa-check");
+            //icon.classList.toggle("fas fa-check")
             
         })
 
         const deleTodo = ()=>{
             deleteTask.addEventListener("click", (e)=>{
-                taskList.remove()
+                taskList.remove();
             })
         }
-        deleTodo()
+
+        const editTodo = ()=>{
+            editTask.addEventListener("click", (e)=>{
+                e.preventDefault();
+                let inputEdit = document.createElement("input");
+                const save = document.createElement("button");
+                save.innerHTML = `Save`;
+                inputEdit.type = "text";
+                inputEdit.setAttribute("class", "inputEdit");
+                save.setAttribute("id", "save");
+                taskList.append(save, inputEdit);
+                inputEdit.addEventListener("keypress", (e)=>{
+                    taskName.style.visibility ="hidden"
+                })
+                save.addEventListener("click", (e)=>{
+                    e.preventDefault();
+                    if(inputEdit.value === ""){
+                        console.log("Veillez entrer une modification svp");
+                    }
+                    if(inputEdit.value != "") {
+                       
+                        taskName.textContent = inputEdit.value;
+                        taskName.style.visibility = "visible"
+                        save.remove();
+                        inputEdit.remove();
+                    }
+                })
+
+
+            })
+        }
+
+        editTodo();
+        deleTodo();
     })
     
     
 }
 
-
-
-
-displayTodo()
+todoApp()

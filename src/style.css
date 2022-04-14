@@ -22,6 +22,10 @@ body{
     font-weight: bold;
 }
 
+.emptyTodo{
+    color: #e419e0;
+}
+
 .todo-title{
     color: gray;
     font-style: italic;
@@ -106,7 +110,7 @@ body{
 }
 
 /* CheckBox done */
-.taskList input{
+.taskList input[type="checkbox"]{
    display: block;
    float: right;
    margin-top: -5px;
@@ -132,4 +136,30 @@ body{
     color: rgb(2, 168, 2);
     font-size: 26px;
     font-weight: bold;
+}
+
+#save{
+
+    position: absolute;
+    left: 44em;
+  
+    border: 1px solid #fff;
+    background: green;
+    margin-left: -200px;
+    color: #fff
+}
+
+.inputEdit {
+    position: absolute;
+    left: 28em;
+    margin-top: -15px;
+    padding: 7px;
+    width: 300px;
+    background: transparent;
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #fff;
+    outline: none;
+    font-style: 26px;
+  
 }
